@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Directorio Mágico | HP-API</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>⚡ Directorio de Hogwarts ⚡</h1>
+            <p>Busca información de los magos y brujas del mundo mágico.</p>
+            
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Escribe un nombre (ej. Harry, Draco)...">
+            </div>
+
+            <!-- Botones de filtrado por casa -->
+            <div class="filters">
+                <button class="filter-btn active" data-house="All">Todos</button>
+                <button class="filter-btn gryffindor" data-house="Gryffindor">Gryffindor</button>
+                <button class="filter-btn slytherin" data-house="Slytherin">Slytherin</button>
+                <button class="filter-btn ravenclaw" data-house="Ravenclaw">Ravenclaw</button>
+                <button class="filter-btn hufflepuff" data-house="Hufflepuff">Hufflepuff</button>
+            </div>
+        </header>
+
+        <main id="resultsContainer" class="grid">
+            <!-- El contenido se inyectará aquí -->
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

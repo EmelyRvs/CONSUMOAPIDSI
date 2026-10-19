@@ -1,0 +1,124 @@
+:root {
+    --bg-dark: #0f111a;
+    --card-bg: #1a1d29;
+    --text-light: #e2e8f0;
+    --accent: #d4af37; /* Dorado mágico */
+    --accent-hover: #b5952f;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+h1 {
+    font-size: 3rem;
+    color: var(--accent);
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+}
+
+/* Caja de búsqueda */
+.search-box {
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+    margin-bottom: 20px;
+}
+
+input {
+    padding: 12px 20px;
+    width: 100%;
+    max-width: 500px;
+    border: 2px solid #2f3542;
+    border-radius: 8px;
+    font-size: 1rem;
+    background-color: #1e2233;
+    color: white;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+input:focus { border-color: var(--accent); }
+
+/* Filtros por casa */
+.filters {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.filter-btn {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 20px;
+    background-color: #2f3542;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.filter-btn:hover, .filter-btn.active {
+    background-color: var(--accent);
+    color: #000;
+}
+
+/* Colores específicos por casa al pasar el cursor */
+.filter-btn.gryffindor:hover { background-color: #740001; color: white; }
+.filter-btn.slytherin:hover { background-color: #1a472a; color: white; }
+.filter-btn.ravenclaw:hover { background-color: #0e1a40; color: white; }
+.filter-btn.hufflepuff:hover { background-color: #eeb939; color: black; }
+
+/* Cuadrícula de resultados */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 25px;
+}
+
+/* Tarjetas */
+.card {
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.card:hover { transform: translateY(-8px); }
+
+.card img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    object-position: top;
+}
+
+.card-content {
+    padding: 15px;
+    border-top: 4px solid var(--accent);
+}
+
+.card-content h3 { font-size: 1.3rem; margin-bottom: 8px; }
+.info { font-size: 0.9rem; color: #a4b0be; margin-bottom: 5px; }
+.loading { text-align: center; font-size: 1.2rem; color: var(--accent); grid-column: 1 / -1; }
